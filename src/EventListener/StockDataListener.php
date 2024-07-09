@@ -31,7 +31,6 @@ class StockDataListener
         // Fetch stock data
         $symbol = 'EAT';
         $stockData = $this->stockDataService->getStockQuote($symbol);
-        $this->logger->error('An erroasdlkfjasldjfklajsdlkfjaslkdjfklasjdaf');
         // Store stock data in request attributes
         $event->getRequest()->attributes->set('_stock_data', $stockData);
     }
