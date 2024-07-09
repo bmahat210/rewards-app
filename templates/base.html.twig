@@ -1,0 +1,65 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="{{ asset('css/styles.css') }}"> {% block stylesheets %}{% endblock %}
+		</head>
+		<body>
+			<header>
+				<nav>
+					<ul>
+						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+							<li>
+								<a href="{{ path('reward_index') }}">Rewards</a>
+							</li>
+							<li>
+								<a href="{{ path('reward_new') }}">Create Reward</a>
+							</li>
+							<li>
+								<a href="{{ path('app_logout') }}">Logout</a>
+							</li>
+						{% else %}
+							<li>
+								<a href="{{ path('login') }}">Login</a>
+							</li>
+							<li>
+								<a href="{{ path('app_register') }}">Register</a>
+							</li>
+						{% endif %}
+
+						{% if app.request.attributes.has('_stock_data') %}
+							{% set stockData = app.request.attributes.get('_stock_data') %}
+							{% if stockData %}
+								<li>
+									<b>
+										<i>EAT ${{ stockData|number_format(2, '.', ',') }}</i>
+									</b>
+								</li>
+							{% endif %}
+
+						{% endif %}
+					</ul>
+				</nav>
+			</header>
+
+			<main>
+				{% block body %}{% endblock %}
+			</main>
+
+			<footer>
+				{% block footer %}
+					<p>&copy;
+						{{ 'now'|date('Y') }}
+						Bipul Mahat</p>
+				{% endblock %}
+			</footer>
+
+			{% block javascripts %}{% endblock %}
+		</body>
+	</html>

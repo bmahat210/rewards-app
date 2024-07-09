@@ -1,0 +1,17 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+index_redirect:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+    defaults:
+        route: reward_index
+        permanent: true
+reward_new:
+    path: /rewards/new
+    controller: App\Controller\RewardController::new
+reward_index:
+    path: /rewards
+    controller: App\Controller\RewardController::index

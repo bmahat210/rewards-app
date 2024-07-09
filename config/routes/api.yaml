@@ -1,0 +1,4 @@
+# config/routes/api.yaml
+reward:
+    resource: '../../src/Controller/RewardController.php'
+    type: attribute
