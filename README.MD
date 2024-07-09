@@ -66,6 +66,49 @@ Open your browser and go to http://127.0.0.1:8000.
     ```bash
     php bin/phpunit
 
+## REST API Endpoints
+
+1. List Rewards:
+  ```bash
+  GET /api/rewards
+  ```
+
+2. Create Reward:
+  ```bash
+  POST /api/rewards
+  ```
+
+- Body (JSON):
+  ```json
+  {
+    "name": "Reward Name",
+    "description": "Reward Description"
+  }
+  ```
+
+3. Show Reward:
+  ```bash
+  GET /api/rewards/{id}
+  ```
+
+4. Update Reward:
+  ```bash
+  PUT /api/rewards/{id}
+  ```
+
+  - Body (JSON):
+  ```json
+  {
+    "name": "Updated Reward Name",
+    "description": "Updated Reward Description"
+  }
+  ```
+
+5. Delete Reward:
+  ```bash
+  DELETE /api/rewards/{id}
+  ```
+
 ## Preview
 - Login Screen
 ![Alt text](/screenshots/login.png?raw=true "Login Screen")
