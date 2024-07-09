@@ -66,3 +66,10 @@ Open your browser and go to http://127.0.0.1:8000.
     ```bash
     php bin/phpunit
 
+## Preview
+- Login Screen
+![Alt text](/screenshots/login.png?raw=true "Login Screen")
+- Create Rewards Screen
+![Alt text](/screenshots/create.png?raw=true "Create Rewards Screen")
+- List Rewards Screen
+![Alt text](/screenshots/list.png?raw=true "List Rewards Screen")
