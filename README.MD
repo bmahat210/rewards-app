@@ -96,7 +96,7 @@ Open your browser and go to http://127.0.0.1:8000.
   PUT /api/rewards/{id}
   ```
 
-  - Body (JSON):
+- Body (JSON):
   ```json
   {
     "name": "Updated Reward Name",
